@@ -1,0 +1,336 @@
+/* ========== Feature page ==========
+
+.demo-headings
+	h1, h2, h3, h4
+		color: $dark-blue
+		text-align: center
+
+.demo-grid
+	text-align: center
+
+	> b
+		width: 42px
+		height: 42px
+		+inline-block
+		text-align: center
+		line-height: 32px
+		border-radius: 50%
+		font-size: 12px
+		border: 5px solid $dark-blue
+		+box-sizing(border-box)
+		+box-shadow(0 0 0 3px $white, 0 2px 2px 4px rgba(0,0,0, 0.4), inset 0 0 2px rgba(0,0,0,0.9))
+
+.alert
+	padding: 14.5px 42px
+	+border-radius(5px)
+	position: relative
+	background: $red
+	color: $white
+	+box-sizing(border-box)
+	margin-bottom: 21px
+
+	> h2
+		margin: 0 
+		font-weight: 300
+		text-transform: none
+
+		> b
+			font-size: 14px
+			font-family: $font
+			+inline-block
+
+a.close
+	position: absolute
+	top: 50%
+	right: 42px
+	width: 21px
+	height: 21px
+	display: block
+	background: $white
+	+border-radius(50%)
+	margin-top: -10.5px
+	text-align: center
+	line-height: 22px
+	color: $red
+
+.warning
+	background: $red
+
+.done
+	background: $done
+
+.notice
+	background: $yellow
+
+.simple
+	background: $light-brown
+
+.button
+	+border-radius(3px)
+	border: none
+	background: $red
+	color: $white
+	+box-shadow(0 3px 0 $dark-red)
+	height: 42px
+	margin-top: 10.5px
+	margin-bottom: 10.5px
+	text-transform: uppercase
+	font-weight: 700
+	letter-spacing: 1px
+	position: relative
+	padding: 10.5px 21px
+	+box-sizing(border-box)
+	cursor: pointer
+	+transition(none !important)
+	+inline-block()	
+
+	&:hover
+		top: 1px
+		+box-shadow(0 2px 0 $dark-red)
+		+opacity(0.9)
+		color: rgba($white, 0.8)
+
+	&:active
+		top: 2px
+		+box-shadow(0 1px 0 $dark-red)
+
+.button-blue
+	background: $blue
+	color: $button-shadow
+	+box-shadow(0 3px 0 $button-shadow)
+
+	&:hover
+		top: 1px
+		+box-shadow(0 2px 0 $button-shadow)
+		+opacity(0.9)
+		color: rgba($button-shadow, 0.6)
+
+	&:active
+		top: 2px
+		+box-shadow(0 1px 0 $button-shadow)
+
+.button-submit
+	width: 70px
+	height: 39px
+	+squish-text()
+	background: url(../img/subscribe.png) center center no-repeat $red
+	vertical-align: top
+
+.medpark-tabs
+	position: relative
+	padding-top: 42px
+	overflow: hidden
+	margin-bottom: 0
+	+backface-visibility(hidden)
+
+	> li
+		> label
+
+			> b
+				position: absolute
+				width: 130px
+				height: 42px
+				display: block
+				border: 1px solid $widget-shadow
+				border-bottom: 0 solid transparent
+				top: 0
+				+border-radius(5px 5px 0 0)
+				text-transform: uppercase
+				text-align: center
+				line-height: 42px
+				color: $dark-blue
+				font-weight: 700
+				+transition(all 0.2s ease-out)
+				+user-select(none)
+				cursor: pointer
+
+				&:hover
+					background: $white
+				
+
+		> input[type=radio]
+			display: none
+
+			&:checked
+
+				+ label
+
+					> b
+						background: $violet
+						color: $white
+						border: 1px solid $violet
+						border-bottom: 0 solid transparent
+
+				~ ul
+					position: relative
+					top: 0
+					z-index: 2
+
+					> li
+						right: 0%
+						+opacity(1)			
+
+
+		> ul
+			+box-sizing(border-box)
+			+box-shadow(inset 0 0 0 1px $widget-shadow, 0 2px 0 $violet)
+			+border-radius(0 0 5px 5px)
+			padding: 21px 31px
+			position: absolute
+			top: 42px
+			bottom: 0
+			z-index: -1
+			width: 100%
+
+			> li
+				margin-bottom: 42px
+				position: relative
+				right: -150%
+				+transition(right 0.9s ease)
+				+opacity(0)
+
+				
+
+				&:last-child
+					margin-bottom: 0
+
+				> figure
+					padding-right: 7px
+					margin: 0
+
+				> p
+					margin: 0
+
+					> a:hover
+						color: $violet
+
+		&:last-child
+			> label
+
+				> b
+					left: 138px
+
+.medpark-acordion
+	
+	> li
+		padding-left: 38px
+
+		> label
+
+			> input[type=radio]
+				display: none
+
+				&:checked
+
+					~ b
+						&:before
+							content: '-'
+							background: $tabs-hover
+							color: rgba($white, 0.9)
+
+					~ span
+						height: auto
+						padding: 10.5px 21px
+						margin-bottom: 21px
+						max-height: 300px
+
+			> b, > span
+				+border-radius(3px)
+				+box-shadow(inset 0 0 0 2px $light-blue, 0 2px 0 $tabs)
+				display: block
+
+			> span
+				padding: 0 21px
+				height: 0
+				max-height: 0
+				overflow: hidden
+				+transition(padding 0.2s linear)
+				margin: 0
+
+			> b
+				padding: 5.25px 21px
+				margin: 5.25px 0 10.5px
+				position: relative
+				+transition(all 0.3s linear)
+				cursor: pointer
+				+user-select(none)
+
+				&:before
+					content: '+'
+					position: absolute
+					top: 0
+					left: -38px
+					width: 30px
+					height: 30px
+					background: $green
+					border-radius: 3px
+					color: $white
+					font-size: 24px
+					font-weight: 700
+					text-align: center
+					line-height: 32px
+					+box-shadow(0 2px 0 $button-shadow)
+					display: block
+
+.pricing-table
+	text-align: center
+	+box-shadow(0 0 8px rgba($black, 0.2))
+	margin-bottom: 21px
+	+border-radius(5px)
+	cursor: pointer
+
+	&:hover
+		+box-shadow(inset 0 0 0 2px $red)
+
+		.price
+			background: $red
+
+	> h2
+		text-transform: none
+		font-family: "Aleo"
+		height: 104px
+		color: $dark-blue
+		border-bottom: 1px solid $widget-shadow
+		position: relative
+		margin-bottom: 21px
+
+		> b
+			position: absolute
+			width: 100%
+			top: 0
+			bottom: 0
+			margin: auto
+			height: 25%
+			left: 0
+
+	> ul
+		text-transform: uppercase
+
+		> li
+			padding: 10.5px
+			+box-shadow(0 1px 0 $widget-shadow)
+
+			&:last-child
+				+box-shadow(none)
+
+	.price
+		height: 105px
+		background: $dark-blue
+		margin-bottom: 0
+		margin-top: 21px
+		position: relative
+		font-size: 30px
+		color: $white
+		font-family: "Aleo"
+		text-align: center
+		+border-radius(0 0 5px 5px)
+		+transition(all 0.1s ease)
+
+		> b
+			position: absolute
+			width: 100%
+			margin: auto
+			top: 0
+			bottom: 0
+			height: 25%
+			left: 0

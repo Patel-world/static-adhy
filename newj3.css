@@ -1,0 +1,16 @@
+.card-body {
+    text-underline: none;
+    text-decoration: none;
+    color: gray;
+    font-weight: 700;
+}
+
+.card-body {
+    text-decoration: none;
+    color: gray;
+    font-weight: 700;
+}
+
+.card-body:hover {
+    text-decoration:none
+}

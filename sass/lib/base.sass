@@ -1,0 +1,525 @@
+/* ========== Base style ==========
+@charset "UTF-8"
+
+body
+	background: $bg
+	font-family: $font
+	font-size: $font-size
+	line-height: 1.5em
+	color: $text-color
+
+img
+	vertical-align: bottom
+
+a
+	text-decoration: none
+
+/* ========== Header ==========
+
+.main-header
+	padding-top: 42px
+	background: url(../img/header_line.png) 0 42px repeat-x transparent
+
+	> .container
+		background: url(../img/menu_corner.png) right 0 no-repeat $green
+		height: 126px
+		position: relative
+
+.helper-decor
+	height: 126px
+	background: url(../img/header_line.png) 0 0px repeat-x transparent
+	position: relative
+	right: -21px
+
+	> p
+		width: 20px
+		height: 105px
+		background: $light-green
+		position: relative
+		top: 9.5px
+
+		> b
+			width: 10px
+			height: 105px
+			display: block
+			position: relative
+			left: 10px
+			background: url(../img/header_line.png) 0 -10px repeat-x transparent
+
+.left-decor
+	right: auto
+	left: -21px
+	> p
+		left: 50px
+		background: $dark-blue
+
+		> b
+			left: 0
+
+.logo-box
+	padding: 10.5px
+	height: 126px
+	+box-sizing(border-box)
+	display: table
+
+	> a
+		display: table-cell
+		vertical-align: middle
+
+.main-nav
+
+	> ul
+		+pie-clearfix()
+		padding-top: 52.5px
+		margin-bottom: 0
+
+		> li
+			float: left
+			margin: 0 10.5px
+			text-transform: uppercase
+			position: relative
+			padding-bottom: 42px
+
+			&:hover
+				> ul
+					display: block
+
+			> a
+				padding: 7px 10.5px
+				color: $white
+				+transition(all 0.4s ease-out)
+				+border-radius(3px)
+				position: relative
+
+
+				&:hover
+					background: $white
+					color: $dark-blue
+					+box-shadow(0 2px 0 $dark-green)
+
+					+ ul
+						display: block
+
+				&:active
+					+box-shadow(0 1px 0 $dark-green)
+					top: 1px
+					background: $white
+					color: $dark-blue
+
+			ul
+				display: none
+				position: absolute
+				top: 42px
+				left: 50%
+				margin-left: -75px
+				background: $white
+				width: 150px
+				border-radius: 5px
+				padding-bottom: 10.5px
+				+box-shadow(0 3px 0 $menu-shadow, inset 0 0 0 1px $bg)
+				z-index: 100
+
+				&:hover
+					display: block
+
+				> li
+					text-align: center
+					position: relative
+
+					&:hover
+						> ul
+							left: 220px
+							+opacity(1)
+							+scale(1)
+
+						~ a
+							background: $white
+							color: $dark-blue
+							+box-shadow(0 2px 0 $dark-green)
+					> ul
+						position: absolute
+						left: 75px
+						display: block
+						top: 10.5px
+						z-index: 1
+						+opacity(0)
+						+transition(left 0.4s ease-out, opacity 0.8s ease-out)
+						+scale(0)
+						+transform-origin(0, 0)
+
+
+
+					> a
+						color: $text-color
+						padding-top: 10.5px
+						display: block
+						+transition(all 0.4s ease-out)
+						font-size: 13px
+
+						&:before
+							content: '\2022'
+							+transition(all 0.4s ease-out)
+							position: relative
+							left: -3px
+							color: transparent
+
+						&:hover
+							color: $dark-blue
+
+							&:before
+								color: $dark-blue
+								left: -10px
+
+		.current-menu-item
+			> a
+				background: $white
+				color: $dark-blue
+				+box-shadow(0 2px 0 $dark-green)
+
+/* ========== Bredcrumbs ==========
+
+.bredcrumbs
+	background: $dark-blue
+	height: 147px
+
+.current-page
+
+	> h1
+		color: $white
+		margin-top: 42px
+		margin-bottom: 10.5px
+
+	> ul
+		+pie-clearfix()
+
+		> li
+			float: left
+			margin-right: 21px
+			position: relative
+			color: $gray
+
+			&:after
+				content: '/'
+				position: absolute
+				top: 0
+				right: -16px
+
+			&:last-child
+				&:after
+					content: ''
+
+			> a
+				color: $gray
+				font-family: "Aleo"
+				letter-spacing: 1px
+				font-weight: 900
+				font-style: italic
+
+				&:hover
+					+opacity(0.8)
+
+.search-form
+	position: relative
+	height: 147px
+
+	> form
+		position: absolute
+		width: 230px
+		height: 42px
+		top: 0
+		bottom: 0
+		margin: auto
+		right: 0
+		background: rgba($black, 0.2)
+		+border-radius(5px)
+
+		> p 
+			margin-bottom: 0
+			> input[type=text]
+				width: 180px
+				height: 32px
+				margin: 0
+				margin-top: 5px
+				padding-left: 10.5px
+				background: transparent
+				border: none
+				color: $white
+
+				&::-webkit-input-placeholder
+					text-transform: uppercase
+					color: $white
+					font-weight: 900
+
+				&:moz-placeholder
+					text-transform: uppercase
+					color: $white
+					font-weight: 900
+
+				&:placeholder
+					text-transform: uppercase
+					color: $white
+					font-weight: 900
+
+				&:focus
+
+					+ button
+						background-position: -42px -1px
+			> button
+				+squish-text()
+				width: 42px
+				height: 42px
+				vertical-align: middle
+				background: url(../img/search_icon.png) 0 -1px no-repeat
+				border: none
+				cursor: pointer
+				+transition(none)
+
+				&:hover
+					background-position: -42px -1px
+
+
+/* ========== Page basics ==========
+.content-box
+	background: $white
+	padding: 42px 0
+
+.fan-green
+	background: url(../img/green_shadow.png) top right no-repeat $fantastico
+
+	&:after
+		background: url(../img/fantastico_ribon.png) 0 0 no-repeat transparent
+
+.fan-blue
+	background: url(../img/blue_shadow.png) top right no-repeat $fantastico-blue
+
+	&:after
+		background: url(../img/fantastico_ribon_blue.png) 0 0 no-repeat transparent
+
+.fantastico
+	margin: 42px 0
+	color: $white
+	position: relative
+	padding: 0 42px
+	height: 42px
+	line-height: 42px
+
+	&:after
+		content: ''
+		width: 40px
+		height: 73px
+		display: block
+		position: absolute
+		bottom: 0
+		right: 0
+
+#map-canvas
+	height: 420px
+
+	img
+		max-width: none
+
+/* ========== Subscribe box ==========
+
+.subscribe-box
+	background: $light-blue
+	height: 84px
+
+	h2
+		color: $dark-blue
+		margin: 0
+		margin-top: 27px
+		text-transform: none
+		font-weight: 300
+		font-family: "Aleo"
+
+.subscribe-form
+	form
+		margin-top: 21px
+	input[type=text]
+		width: 345px
+		padding: 5px 10.5px
+		height: 42px
+		+box-sizing(border-box)
+		border: 1px solid darken($light-gray, 10%)
+		+border-radius(3px)
+
+		&:focus
+			border: 1px solid darken($light-gray, 30%)
+			outline: none
+
+	button[type=submit]
+		margin: 0
+		margin-left: 10px
+
+/* ========== Footer ==========
+
+.main-footer
+	background: $dark-blue
+	padding: 42px 0
+
+	h4
+		margin-bottom: 21px
+		text-transform: uppercase
+		font-weight: 900
+		letter-spacing: 0
+		color: $footer-heding
+
+.footer-logo
+	margin-bottom: 19px
+	min-height: 23px
+
+.footer-nav
+	text-transform: uppercase
+
+	ul
+		margin-bottom: 0
+
+		li
+			margin-bottom: 10.5px
+
+			&:last-child
+				margin-bottom: 0
+
+			> a
+				color: $white
+
+				&:before 
+					content: '-'
+					margin-right: 5px
+					+transition(all 0.4s ease-out)
+					display: inline-block
+
+				&:hover
+					color: $blue
+					&:before
+						color: $blue
+						+rotate(360deg)
+
+		.current-menu-item
+			> a
+				color: $blue
+
+				&:before
+					color: $blue
+
+.footer-contact
+	color: $white
+
+	> li
+		margin-bottom: 10.5px
+		text-transform: uppercase
+
+		a
+			color: $footer-heding
+
+			&:hover
+				color: $white
+
+		> b
+			width: 95px
+			+inline-block
+			vertical-align: top
+			padding-left: 31.5px
+			background: url(../img/footer_contact.png) 0 0 no-repeat transparent
+
+	.phone > b 
+		background-position: 0px 0px
+
+	.fax > b 
+		background-position: 0px -21px
+
+	.email > b 
+		background-position: 0px -42px
+
+	.address > b 
+		background-position: 0px -63px
+
+.tweet-box
+	padding-left: 31.5px
+	height: 84px
+	overflow: hidden
+	margin-bottom: 21px
+	background: url(../img/tweeter_bird.png) 0 3px no-repeat transparent
+
+.tweetList
+	color: $white
+
+	a
+		color: $blue
+
+	p
+		margin-bottom: 0
+
+.social-footer
+	+pie-clearfix()
+	margin-bottom: 0
+	padding-top: 9.5px
+
+	> li
+		float: left
+		margin-right: 15px
+
+		> a
+			width: 24px
+			height: 24px
+			display: block
+			+squish-text()
+			background: url(../img/social_footer.png) 0 0 no-repeat transparent
+			+opacity(0.5)
+
+			&:hover
+				+opacity(1)
+
+	.facebook > a
+		background-position: 0 0
+
+	.twitter > a
+		background-position: -24px 0
+
+	.yahoo > a
+		background-position: -48px 0
+
+	.linkedin > a
+		background-position: -72px 0
+
+	.rss > a
+		background-position: -96px 0
+
+	.pinterest > a
+		background-position: -120px 0
+
+	.flickr > a
+		background-position: -144px 0
+
+/* ========== Copyright box ==========
+
+.copyright-box
+	height: 63px
+	padding: 21px 0
+	+box-sizing(border-box)
+	text-transform: uppercase
+
+	p
+		margin-bottom: 0
+
+	.right-side
+		text-align: right
+
+	a
+		color: $dark-blue
+
+.parsley-error
+	background: rgba($red, 0.1)
+	border: 1px solid rgba($red, 0.2) !important
+	color: $red !important
+
+.parsley-error-list
+	color: $red
+	font-size: 12px
+	margin-bottom: 0
+
+	> li
+		+transition(all 0.4s ease)
+
+.text-placeholder
+	color: $gray !important

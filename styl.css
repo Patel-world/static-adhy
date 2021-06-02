@@ -1,0 +1,32 @@
+
+div#videos {
+  display: block;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 720px;
+  height: 360px;
+  left: 0px;
+  top: -30px;
+}
+
+
+/* Container needed to position the button. Adjust the width as needed */
+.container {
+    position: absolute;
+    width: 50%;
+  }
+
+  /* Make the image responsive */
+  .container video {
+    position: fixed;
+    background: black;
+    border-radius: 2%;
+    left: 80px;
+    top: 150px;
+    width: 775px;
+    height: 420px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+  /* Style the button and place it in the middle of the container/image */

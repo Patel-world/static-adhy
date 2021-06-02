@@ -1,0 +1,20 @@
+button.chat {
+    position: relative;
+    left: 1064px;
+    top: 64px;
+}
+
+
+element.style {
+    height: fit-content;
+    width: 60px;
+    background: none;
+    border: none;
+}
+
+  button#chat {
+      position: relative;
+      top: 0px;
+      left: 1251px;
+      display: none;
+}

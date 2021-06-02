@@ -1,0 +1,26 @@
+  button {
+    top: 460px;
+    left: 400px;
+}
+svg.bi.bi-camera-video-fill {
+    height: 40px;
+    width: -webkit-fill-available;
+}
+  .btn1 {
+	  height: 50px;
+	  width: 50px;
+  }
+
+  button.join {
+    top: 350px;
+    left: 1054px;
+}
+  button.cast {
+    top: 350px;
+    left: 1054px;
+}
+  button#chat {
+      top: 85px;
+      left: 1227px;
+      display: none;
+}

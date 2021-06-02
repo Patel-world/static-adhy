@@ -1,0 +1,12 @@
+ul.nav.navbar-nav.navbar-right {
+    position: absolute;
+    left: 1150px;
+}
+a {
+    margin: 10px;
+}
+
+a:hover {
+    color: gray;
+    text-decoration: blink;
+}

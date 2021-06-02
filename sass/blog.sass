@@ -1,0 +1,401 @@
+/* ========== Blog page ==========
+
+.blog-section
+	margin-top: 21px
+
+.blog-post
+	margin-bottom: 63px
+
+.show-image
+	display: block
+	position: relative
+	overflow: hidden
+
+	&:before
+		content: '+'
+		width: 42px
+		height: 42px
+		display: block
+		background: $green
+		color: $white
+		position: absolute
+		top: 0
+		bottom: 0
+		right: 0
+		left: 0
+		margin: auto
+		font-size: 28px
+		font-weight: 300
+		text-align: center
+		line-height: 42px
+		+scale(15)
+		+transition(all 0.2s ease-in-out)
+		+opacity(0)
+		+backface-visibility(hidden)
+
+	&:hover
+		+opacity(0.5)
+
+		&:before
+			+scale(1)
+			+opacity(0.9)
+			+rotate(90deg)
+
+	> img
+		
+
+.blog-post-header
+	padding-top: 21px
+
+.date-square
+	> time
+		background: $dark-blue
+		display: block
+		height: 63px
+		position: relative
+		overflow: hidden
+		color: $white
+		text-transform: uppercase
+		text-align: center
+		+box-shadow(0 4px 0 $bage)
+
+		> b
+			display: block
+			width: 100%
+			font-size: 24px
+			padding-top: 12px
+
+		&:after
+			content: ""
+			width: 200%
+			height: 200%
+			display: block
+			position: absolute
+			top: -100%
+			left: -130%
+			background: rgba($white, 0.1)
+			+rotate(-45deg)
+
+.meta-post
+	> h3
+		border-bottom: 1px solid $light-gray
+		position: relative
+		left: -10px
+		padding: 5.25px 21px
+		line-height: 20px
+		> a
+			font-family: "Aleo"
+			color: $dark-blue
+
+			&:hover
+				color: $red
+
+	> ul
+		+pie-clearfix()
+
+		> li
+			float: left
+			margin: 0 11px
+
+			> a
+				color: $red
+				+opacity(0.5)
+
+				&:hover
+					+opacity(1)
+
+.pagination
+	> ul
+		padding: 5.25px 0 
+
+		> li
+			+border-radius(3px)
+			background: $bg
+			+inline-block()
+			height: 31.5px
+			line-height: 31.5px
+			padding: 0 11px
+			min-width: 11.5px
+			text-align: center
+			+box-shadow( 0 2px 0 $pag)
+			+transition(all 0.1s linear)
+
+			&:hover
+				background: $white
+
+			> a
+				display: block
+				height: 31.5px
+
+		.next, .prev
+			width: 84px
+
+		.next
+			margin-left: 42px
+
+		.prev
+			margin-right: 42px
+
+
+		.current
+			background: $white
+
+
+.main-sidebar
+	.fantastico
+		margin-top: 21px
+
+.widget
+	padding-bottom: 21px
+
+.blog-categories
+	
+	> li
+		margin-bottom: 21px
+		text-transform: uppercase
+
+		> a
+			display: block
+			+border-radius(3px)
+			background: $bg
+			line-height: 21px
+			padding: 10.5px 21px
+			+box-shadow( 0 2px 0 $pag)
+
+			&:hover
+				background: $white
+				color: $dark-blue
+				+box-shadow( 0 2px 0 $pag)
+
+.widget-ads
+	+box-sizing(border-box)
+	+box-shadow(0 0 0 1px $ad)
+	padding: 7px
+	background: $ad-bg
+	text-align: center
+
+.tags-list
+	+pie-clearfix()
+	list-style: none !important
+
+	> li
+		float: left
+		margin-bottom: 21px
+		text-transfor: uppercase
+
+		> a
+			padding: 10.5px 36px 10.5px 21px
+			background: $tag
+			margin-right: 31px
+			+inline-block()
+			position: relative
+			+border-radius( 3px 0 0 3px)
+			+box-shadow(0 2px 0 $tag-shadow)
+			color: $dark-green
+
+			&:hover
+				background: $tag-hover
+				color: $green
+
+				&:after
+					background: $tag-hover
+
+			&:after
+				content: '\2022'
+				display: block
+				width: 32px
+				height: 32px
+				position: absolute
+				background: $tag
+				top: 4.5px
+				right: -14px
+				+rotate(45deg)
+				+box-shadow(3px 0 0 -1px $tag-shadow)
+				+border-radius(3px)
+				text-align: center
+				line-height: 34px
+				font-size: 24px
+				color: $white
+				text-shadow: -1px -2px 0 $tag-shadow
+				+transition(all 0.4s ease-out)
+
+.footer-article
+	padding-top: 42px
+
+.share-blog
+	position: relative
+	margin-bottom: 21px
+
+	> input[type=checkbox]
+		display: none
+
+		&:checked
+
+			+ label
+				background: none
+				+box-shadow(inset 0 0 0 2px $dark-blue)
+				color: $dark-blue					
+
+			~ ul
+				display: block
+				overflow: visible
+				width: auto
+				max-width: 400px
+				+opacity(1)
+				padding: 0 21px
+				left: 115px
+
+
+
+		+ label
+			background: $dark-blue
+			padding: 5.25px 21px
+			color: $white
+			cursor: pointer
+			text-transform: uppercase
+			+transition(all 0.2s ease-in)
+			+user-select(none)
+
+			&:hover
+				+opacity(0.9)
+	> ul
+		list-style: none
+		position: absolute
+		left: 100px
+		background: $dark-blue
+		+pie-clearfix()
+		height: 42px
+		top: -10.5px
+		+border-radius(3px)
+		width: 0
+		max-width: 0
+		overflow: hidden
+		+opacity(0)
+		+transition(all 0.1s ease-out)
+
+		&:after
+			content: ''
+			display: block
+			width: 18px
+			height: 18px
+			background: $dark-blue
+			+rotate(45deg)
+			position: absolute
+			left: -5px
+			top: 12px
+
+		> li
+			float: left
+			margin: 0 5.25px
+
+			> a
+				width: 21px
+				height: 21px
+				display: block
+				+squish-text()
+				margin-top: 10.5px
+				background: url(../img/social_blog.png) 0 0 no-repeat transparent
+
+				&:hover
+					+opacity(0.5)
+
+		.facebook > a
+			background-position: 0 0
+
+		.twitter > a
+			background-position: 0 -21px
+
+		.pinterest > a
+			background-position: 0 -42px
+
+.autor-bio
+	background: $dark-blue
+	padding: 21px 0 0
+	color: $footer-heding
+	margin-bottom: 21px
+
+	p > a
+		color: $red
+		+opacity(0.8)
+
+		&:hover
+			+opacity(1)
+
+	h4 > a
+		color: rgba($white, 0.8)
+		font-family: "Aleo"
+
+		&:hover
+			color: $white
+
+	figure
+		+transition(all 0.3s ease)
+
+		&:hover
+			+opacity(0.8)
+		img
+			+border-radius(3px 3px 0 0)
+
+		figcaption
+			background: $red
+			+border-radius(0 0 3px 3px)
+			color: rgba($white, 0.5)
+			text-align: center
+			+box-shadow(0 2px 0 $dark-red)
+
+#commentform
+	input[type=text], input[type=email], textarea
+		width: 100%
+
+	textarea
+		min-height: 210px
+
+	button[type=submit]
+		min-width: 150px
+
+.comment-box
+	li
+		> ul
+			padding-left: 42px
+			margin-bottom: 0
+
+.comment-wrapper
+	padding-bottom: 42px
+	+pie-clearfix()
+
+	> figure
+		padding-right: 21px
+		+box-sizing(border-box)
+
+.message-box
+	padding: 21px
+	+box-sizing(border-box)
+	+box-shadow(0 0 0 1px $comment-box, 0 3px rgba($green, 0.4))
+	+border-radius(3px)
+
+	> h4
+		margin-bottom: 0
+		position: relative
+
+		> a
+			font-family: "Aleo"
+			color: $dark-blue
+			font-style: italic
+
+			&:hover
+				color: $red
+
+		.reply-link
+			position: absolute
+			top: 0
+			right: 0
+			text-transform: lowercase
+			color: $gray
+			font-style: normal
+			font-size: 12px
+
+	time
+		color: $dark-blue
+		text-transform: uppercase
+		margin-bottom: 21px
+		display: block

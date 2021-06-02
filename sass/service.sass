@@ -1,0 +1,197 @@
+/* ========== Services page ==========
+
+.service-section
+	.fantastico
+		margin-top: 21px
+
+.featured-services
+	margin-bottom: 0
+
+	> li
+		+box-sizing(border-box)
+		+box-shadow(0 0 0 1px $light-gray, 0 3px 0 $services)
+		padding-bottom: 21px
+		margin-bottom: 42px
+		margin-top: 21px
+
+		h4
+			text-align: center
+
+			> a
+				font-family: "Aleo"
+				color: $dark-blue
+				font-weight: 900
+
+				&:hover
+					color: $red
+
+		figure
+			margin: 0
+			position: relative
+			top: -21px
+
+			> a
+				width: 63px
+				height: 63px
+				display: table
+				margin: 0 auto
+				background: $white
+				+border-radius(50%)
+				+box-shadow(0 0 0 3px $dark-blue)
+				position: relative
+
+				&:hover
+					+scale(1.2)
+
+				> img
+					position: absolute
+					top: 0
+					bottom: 0
+					left: 0
+					right: 0
+					margin: auto
+
+.services-list
+	> li
+		padding-bottom: 42px
+		margin-top: 42px
+		+box-shadow(0 1px 0 $light-gray)
+
+		&:last-child
+			+box-shadow(none)
+
+		> figure
+			margin: 0
+			> a
+				&:hover
+					+opacity(0.8)
+				> img
+					+border-radius(3px)
+
+		> div
+			> p
+				margin-bottom: 10.5px
+
+			.button
+				margin-bottom: 0
+
+.load-more
+	> a
+		text-align: right !important
+
+.testimonials-widget
+	+box-shadow(0 0 0 1px $light-gray, 0 3px 0 $dark-blue)
+	+border-radius(3px)
+	overflow: hidden
+	position: relative
+	margin-bottom: 21px
+
+.testimonials-nav
+	position: absolute
+	+pie-clearfix()
+	display: table
+	right: 10.5px
+	top: 10.5px
+	z-index: 10
+
+	> li
+		float: left
+		margin: 0
+		margin: 0 2px
+		> a
+			width: 21px
+			height: 21px
+			display: block
+			background: $slider-nav
+			color: $white
+			text-align: center
+			font-size: 21px
+			line-height: 19px
+			font-family: "fantasy"
+
+			&:hover
+				background: rgba($white, 0.3)
+				color: $footer-heding
+
+
+.testimonials-sliders
+	position: relative
+	+transition(all 0.2s ease-out)
+	.hide
+		+opacity(0)
+		> figure
+			> a
+				+scale(0)
+				position: relative
+				left: 10px
+
+			> figcaption
+				a
+					+rotateX(90deg)
+	.active
+		+opacity(1)
+		display: block
+		z-index: 3
+
+		> figure
+			> a
+				+scale(1)
+
+			> figcaption
+				a
+					+rotateX(0deg)
+
+	> li
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		z-index: -1
+		+opacity(0)
+
+		> figure
+			background: $footer-heding
+			padding: 10.5px
+			+box-sizing(border-box)
+			> a
+				margin: 0 auto
+				display: table
+				margin-bottom: 12.5px
+				position: relative
+				+scale(0)
+
+				&:hover
+					> img
+						+rotateX(360deg)
+
+				> img
+					+border-radius(50%)
+					+transition(all 0.4s ease-out)
+
+			> figcaption
+				text-align: center
+				font-family: "Aleo"
+
+				> h4
+					margin: 0
+
+					> a
+						color: $white
+						font-family: "Aleo"
+						display: table
+						margin: 0 auto
+
+						&:hover
+							+opacity(0.5)
+
+				> em
+					color: $prof
+					letter-spacing: 1px
+
+		> div
+			time
+				display: block
+				text-align: right
+				color: $dark-blue
+				text-transform: uppercase

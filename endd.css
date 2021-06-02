@@ -1,0 +1,13 @@
+button#end {
+    position: absolute;
+    display: none;
+    top: 578px;
+    left: 640px;
+}
+div#endc {
+    display: none;
+}
+
+svg#Capa_1 {
+    width: 35px;
+}

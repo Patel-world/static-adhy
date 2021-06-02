@@ -1,0 +1,551 @@
+/* ========== Home page ==========
+
+.featured-section
+	padding: 42px 0 21px 0
+	background: $white
+
+.special-box
+	padding: 42px 0
+	background: $light-blue
+
+	h3
+		margin-bottom: 0
+		line-height: 28px
+		text-transform: lowercase
+
+		> b
+			text-transform: uppercase
+
+	.request-button
+		display: block
+		text-align: center
+
+.why-us
+	background: $white
+	padding: 21px 0 52.5px
+
+.appoiment-section
+	background: $white
+	padding: 21px 0 52.5px
+
+.appoiment-form
+	input[type=text], textarea, select
+		width: 100%
+
+	textarea
+		height: 84px
+
+	.styled-select
+		position: relative
+
+		&:before
+			content: ''
+			width: 40px
+			height: 40px
+			display: block
+			background: red
+			position: absolute
+			top: 1px
+			right: 3px
+			background: $white
+			pointer-events: none
+
+		&:after
+			content: ''
+			width: 10px
+			height: 15px
+			display: block
+			background: url(../img/select_arrow.png) 0 0 no-repeat transparent
+			position: absolute
+			top: 50%
+			right: 16px
+			margin-top: -5px
+			pointer-events: none
+			+transition(all 0.1s linear)
+
+.special-list
+	> li
+		padding-left: 30px
+		position: relative
+
+		&:after
+			content: ''
+			width: 16px
+			height: 13px
+			display: block
+			background: url(../img/check_mark.png) 0 0 no-repeat transparent
+			position: absolute
+			top: 4px
+			left: 0
+
+.home-show
+	
+	> li
+		margin-bottom: 42px
+
+.helper-button
+	margin-bottom: 42px
+
+	> a
+		display: block
+		text-align: center
+
+.wide-box
+	.testimonials-nav
+		margin-top: 31.5px
+		margin-right: 15px
+	.testimonials-sliders
+		figure
+			position: relative
+			> a
+				+inline-block
+				margin-left: 30px
+				margin-top: 10.5px
+
+			> figcaption
+				position: absolute
+				top: 31.5px
+				left: 150px
+				right: 50px
+				text-align: left
+
+				> h4
+					> a
+						display: inline
+						text-align: left
+
+.daterangepicker
+	position: absolute
+	background: #fff
+	top: 110px
+	left: 20px
+	padding: 4px
+	margin-top: 1px
+	+border-radius(3px)
+	+box-shadow(0 0 0 1px $widget-shadow)
+	z-index: 100
+	display: none
+	padding: 10.5px
+
+	.dropdown-menu
+		max-width: none
+
+	.ranges
+		width: 160px
+		text-align: left
+		
+		.range_inputs
+
+			> div
+				float: left
+
+				&:nth-child(2)
+					padding-left: 11px
+	
+	.calendar
+		display: none
+		max-width: 350px
+
+		&:first-child
+			display: none
+
+		th, td
+			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+			white-space: nowrap
+			text-align: center
+
+	.ranges
+		label
+			color: #333
+			font-size: 11px
+			margin-bottom: 2px
+			text-transform: uppercase
+			text-shadow: 1px 1px 0 #fff
+		
+		input
+			font-size: 11px
+		
+		ul
+			list-style: none
+			margin: 0
+			padding: 0
+
+			li
+				font-size: 13px
+				background: #f5f5f5
+				border: 1px solid #f5f5f5
+				color: #08c
+				padding: 3px 12px
+				margin-bottom: 8px
+				-webkit-border-radius: 5px
+				-moz-border-radius: 5px
+				border-radius: 5px
+				cursor: pointer
+
+			.active, li:hover
+				background: #08c
+				border: 1px solid #08c
+				color: #fff
+
+	.calendar-date
+		border: 1px solid #ddd
+		padding: 4px
+		border-radius: 4px
+		background: #fff
+
+	.calendar-time
+		text-align: center
+		margin: 8px auto 0 auto
+		line-height: 30px
+		min-width: 250px
+
+	table
+		width: 100%
+		margin: 0
+	
+		td, th
+			text-align: center
+			width: 20px
+			height: 20px
+			cursor: pointer
+			white-space: nowrap
+		
+		td.off
+			color: #999
+
+		td.disabled
+			color: rgba($gray, 0.5)
+		
+		td.available:hover, th.available:hover
+			background: $tag-hover
+
+		td.in-range
+			background: #ebf4f8
+			-webkit-border-radius: 0
+			-moz-border-radius: 0
+			border-radius: 0
+
+		td.active, td.active:hover
+			background: $dark-blue
+			color: #fff
+			text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25)
+
+		td.week, th.week
+			font-size: 80%
+			color: #ccc
+
+	select.monthselect, select.yearselect
+		font-size: 12px
+		padding: 1px
+		height: auto
+		margin: 0
+		cursor: default
+
+	select.monthselect
+		margin-right: 2%
+		width: 56%
+
+	select.yearselect
+		width: 40%
+
+	select.hourselect, select.minuteselect, select.ampmselect
+		width: 80px !important
+		margin-bottom: 0
+		min-width: 60px
+
+.opensleft
+
+	&:before
+		position: absolute
+		top: -7px
+		right: 9px
+		display: inline-block
+		border-right: 7px solid transparent
+		border-bottom: 7px solid #ccc
+		border-left: 7px solid transparent
+		border-bottom-color: rgba(0, 0, 0, 0.2)
+		content: ''
+	
+	&:after
+		position: absolute
+		top: -6px
+		right: 10px
+		display: inline-block
+		border-right: 6px solid transparent
+		border-bottom: 6px solid $bg
+		border-left: 6px solid transparent
+		content: ''
+
+	.ranges, .calendar
+		float: left
+		margin: 4px
+
+.opensright
+
+	&:before
+		position: absolute
+		top: -7px
+		left: 9px
+		display: inline-block
+		border-right: 7px solid transparent
+		border-bottom: 7px solid #ccc
+		border-left: 7px solid transparent
+		border-bottom-color: rgba(0, 0, 0, 0.2)
+		content: ''
+		
+	&:after
+		position: absolute
+		top: -6px
+		left: 10px
+		display: inline-block
+		border-right: 6px solid transparent
+		border-bottom: 6px solid $bg
+		border-left: 6px solid transparent
+		content: ''
+
+	.ranges, .calendar
+		float: right
+		margin: 4px
+
+.daterangepicker_start_input, .daterangepicker_end_input
+	display: none
+
+.time-pick
+	min-width: 550px !important
+	width: 400px !important
+	background: $bg
+	.calendar-date
+		display: none
+	.calendar
+		float: right !important
+		background: $violet
+		margin-left: 15px
+		+border-radius(3px)
+		+box-shadow(0 2px 0 darken($violet, 70%))
+
+		&:nth-child(2)
+			margin-left: 0px
+			margin-right: 18px
+			position: relative
+
+			&:after
+				content: '-'
+				position: absolute
+				right: -21px
+				top: 10px
+				font-size: 24px
+
+		select
+			background: transparent
+			color: lighten($violet, 30%)
+			border: none
+	
+	.calendar-time
+		margin: 0 !important
+	.ranges
+		float: none !important
+		width: 100%
+		+pie-clearfix()
+		padding-right: 7px
+		+box-sizing(border-box)
+
+		button
+			float: right
+
+.date-pick
+	min-width: 355px !important
+	width: 355px !important
+	background: $bg
+
+	.calendar
+		width: 100%
+	.left
+		display: none !important
+
+	.ranges
+		float: left !important
+		width: 100%
+		+pie-clearfix()
+		padding-right: 7px
+		+box-sizing(border-box)
+
+		button
+			float: right
+
+.icon-arrow-right, .icon-arrow-left
+	position: relative
+	padding-bottom: 42px
+	display: block
+	
+	&:after, &:before
+		content: ''
+		width: 0
+		height: 0
+		display: block
+		position: absolute
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		margin: auto
+
+.icon-arrow-right
+	&:after, &:before
+		border-top: 10px solid transparent
+		border-bottom: 10px solid transparent
+
+	&:before
+		border-left: 10px solid $gray
+
+	&:after
+		border-left: 10px solid $white
+		right: 5px
+
+.icon-arrow-left
+	&:after, &:before
+		border-top: 10px solid transparent
+		border-bottom: 10px solid transparent
+
+	&:before
+		border-right: 10px solid $gray
+
+	&:after
+		border-right: 10px solid $white
+		left: 5px
+
+
+.available
+	&:hover
+		> .icon-arrow-right
+			&:before
+				border-left: 10px solid $dark-blue
+
+			&:after
+				border-left: 10px solid $tag-hover
+
+.available
+	&:hover
+		> .icon-arrow-left
+			&:before
+				border-right: 10px solid $dark-blue
+
+			&:after
+				border-right: 10px solid $tag-hover
+
+.medpak-slider
+	position: relative
+	overflow: hidden
+
+.slider-nav
+	margin-bottom: 0
+	> li
+		position: absolute
+		top: 0
+		bottom: 0
+		width: 30px
+		height: 30px
+		margin: auto
+		z-index: 10
+
+		> a
+			display: block
+			+box-shadow(inset 0 0 0 2px $appointment-link)
+			height: 30px
+			+box-sizing(border-box)
+			+border-radius(3px)
+			font-size: 30px
+			line-height: 25px
+			text-align: center
+			font-family: 'Aleo'
+			color: $appointment-link
+			font-weight: 900
+
+			&:hover
+				background: $red
+				+box-shadow(none)
+				color: $white
+
+	.prev-slider
+		left: 20px
+
+	.next-slider
+		right: 20px
+
+
+.slider-medics
+	margin-bottom: 0
+
+	.hide
+		+opacity(0)
+
+	.active
+		+opacity(1)
+
+		figure
+			figcaption
+				+transform(rotateX(0deg) scale(1))
+	> li
+		position: absolute
+		top: 0
+		+transition(all 0.4s ease)
+		+opacity(0)
+		
+		figure
+			margin-bottom: 0
+			figcaption
+				position: absolute
+				height: 40%
+				top: 0
+				left: 0
+				right: 0
+				bottom: 0
+				margin: auto 0
+				background: rgba($white, 0.7)
+				padding: 21px 80px
+				z-index: 9
+				width: 100%
+				+box-sizing(border-box)
+				+transform(rotateX(90deg) scale(0))
+				+transition(all 0.4s ease-in-out)
+
+				> h1
+					> a
+						color: $dark-blue
+						font-family: "Aleo"
+
+						&:hover
+							color: $red
+
+				.slider-info
+					h3
+						color: $gray
+						font-weight: 300
+					> p
+						margin: 0
+						font-family: "Aleo"
+						font-style: italic
+						text-transform: lowercase
+						padding-bottom: 42px
+
+.slider-bullets
+	position: absolute
+	left: 80px
+	bottom: 63px
+	+pie-clearfix()
+	z-index: 20
+
+	> li
+		width: 14px
+		height: 14px
+		background: $bg
+		float: left
+		margin-left: 5px
+		+squish-text()
+		+border-radius(3px)
+		+box-shadow(inset 0 0 0 2px $white, 0 2px 0 $bullet-shadow)
+		+transition(all 0.4s ease)
+		cursor: pointer
+
+	.active
+		background: $appointment-link
+		+box-shadow(inset 0 0 0 2px $white, 0 2px 0 $appointment-link)

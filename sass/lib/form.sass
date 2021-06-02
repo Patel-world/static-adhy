@@ -1,0 +1,50 @@
+input, textarea, select, button
+
+	&:focus
+		outline: none
+	
+form 
+	margin: 0 0 1.5em
+
+label, input, button, select, textarea
+	font-family: $font
+	text-decoration: none
+
+
+textarea
+	resize: vertical
+
+
+input[type=submit], button[type=submit]
+	border: none
+	display: inline-block
+	text-transform: uppercase
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"]
+	border: 1px solid $widget-shadow
+	line-height: 1.5em
+	padding: 5px 10.5px
+	height: 42px
+	+box-sizing(border-box)
+	vertical-align: middle
+	min-width: 120px
+	+border-radius(3px)
+
+input[type="text"], textarea, input[type="email"]
+	&:focus
+		border: 1px solid darken($light-gray, 30%)

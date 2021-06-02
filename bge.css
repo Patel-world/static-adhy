@@ -1,0 +1,15 @@
+button {
+    position: relative;
+    top: 335px;
+    left: 1030px;
+}
+video {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+button.chat {
+    position: relative;
+    left: 1064px;
+    top: 114px;
+}
