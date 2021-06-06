@@ -1,0 +1,5 @@
+Version 1.0.2 - Updated: 01.08.2013
+================================================
+Fixed 	: Internet Explorer, Firefox issues
+Updated : Medpark Slider, now is animated on Firefox
+Added	: New css3 effects	
